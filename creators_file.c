@@ -31,3 +31,15 @@ thing* loading(const char *file, size_t *n){
     fclose(f);
     return array;
 }
+//SAVE CSV
+
+void store(const char *file,thing *array,size_t n){
+    FILE *f=fopen(file,"w");
+    if(!f) return;
+    for(size_t i=0;i<n;i++)
+    fprintf(f,"%s,%.2f,%.2f,%d\n", array[i].name, array[i].watt, array[i].hrs, array[i].on);
+    fclose(f);
+}
+
+
+
