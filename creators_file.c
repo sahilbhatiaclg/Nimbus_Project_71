@@ -41,5 +41,21 @@ void store(const char *file,thing *array,size_t n){
     fclose(f);
 }
 
+//KWH
+
+double kilowatthrs(thing t){
+    return t.on ? (t.watt * t.hrs)/1000.0 : 0.0;
+}
+
+//ADD DEVICE 
+thing* adding(thing *array, size_t *n){
+    thing t;
+    printf("NAME: ");
+    scanf(" %[^\n]",t.name);
+    printf("WATT: ");
+    scanf("%lf",&t.watt);
+    printf("HOURS: ");
+    scanf("%lf",&t.hrs);
+    t.on = 1;
 
 
