@@ -65,7 +65,6 @@ thing* adding(thing *array, size_t *n){
     return array;
 }
 
-
 //REMOVE DEVICE 
 
 thing* remov(thing *array,size_t *n,size_t i){
@@ -76,3 +75,32 @@ thing* remov(thing *array,size_t *n,size_t i){
     (*n)--;
     return realloc(array,*n * sizeof(thing));
 }
+
+//TOGGLE ON/OFF--
+
+void toggle(thing *array,size_t i){
+    array[i].on = !array[i].on;
+}
+
+void displayreport(thing *array,size_t n, double rate){
+    double total = 0;
+
+
+    printf("\n==== ENERGY REPORT ====\n");
+    printf("%-6s %-8s %-8s %-8s %-8s %-10s\n",
+    "IDX","NAME","WATT","HRS/DAY","STATUS","DAILY_KWH");
+
+
+    for(size_t i=0;i<n;i++){
+        double t = kilowatthrs(array[i]);
+        total = total+t;
+
+        printf("%-6zu %-8s %-8.1f %-8.1f %-8s %-10.3f\n",
+        i,
+        array[i].name,
+        array[i].watt,
+        array[i].hrs,
+        array[i].on ? "ON" :"OFF",
+        t);
+    
+        }
