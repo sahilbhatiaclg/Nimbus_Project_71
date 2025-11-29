@@ -131,20 +131,10 @@ int main() {
     }
     else if(target==2){
         size_t i;
-printf("Index: ");
-        scanf("%zu",&i);
-        toggle(array,i);
+    printf("Index: ");
+            scanf("%zu",&i);
+            toggle(array,i);
     }
     else if(target==3){
         array = adding(array,&n);
-    }
-else if(target==4){
-        size_t i;
-        printf("Index: ");
-        scanf("%zu",&i);
-        array = remov(array,&n,i);
-    }
-    else if(target ==5){
-        printf("New Tariff: ");
-        scanf("%lf",&rate);
     }
