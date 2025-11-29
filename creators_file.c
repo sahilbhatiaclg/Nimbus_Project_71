@@ -131,3 +131,10 @@ int main() {
     }
     else if(target==2){
         size_t i;
+printf("Index: ");
+        scanf("%zu",&i);
+        toggle(array,i);
+    }
+    else if(target==3){
+        array = adding(array,&n);
+    }
