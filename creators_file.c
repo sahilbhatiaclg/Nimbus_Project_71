@@ -112,7 +112,7 @@ void displayreport(thing *array,size_t n, double rate){
 }
 
 
-
+// MAIN PROGRAM
 
 
 int main() {
@@ -129,3 +129,5 @@ int main() {
     if(target==1){
         displayreport(array ,n,  rate);
     }
+    else if(target==2){
+        size_t i;
